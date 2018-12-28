@@ -1,4 +1,4 @@
-package com.priyam.learnJava.Rest;
+package com.priyam.learnJava.resource;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -8,7 +8,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import com.priyam.learnJava.Rest.model.Customer;
+import com.priyam.learnJava.model.Customer;
+import com.priyam.learnJava.repository.CustomerRepository;
 
 @Consumes(APPLICATION_JSON)
 @Produces(APPLICATION_JSON)
@@ -24,7 +25,8 @@ public class CustomerResource {
   @POST
   @Path("/add")
   public Customer addCustomer(final Customer customer) {
-    customer.setName("Priyam nigam");
+    CustomerRepository c = new CustomerRepository();
+    c.save(customer);
     return customer;
   }
 }

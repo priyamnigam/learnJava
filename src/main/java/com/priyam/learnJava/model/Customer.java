@@ -1,9 +1,16 @@
-package com.priyam.learnJava.Rest.model;
+package com.priyam.learnJava.model;
+
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Entity
 public class Customer {
+
+  @Id
+  private String id;
   private String name;
   private int age;
 
@@ -28,4 +35,9 @@ public class Customer {
   public int getAge() {
     return age;
   }
+
+  public String getId() {
+    return id;
+  }
+
 }

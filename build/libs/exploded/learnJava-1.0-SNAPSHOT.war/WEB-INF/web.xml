@@ -6,7 +6,7 @@
         </servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.priyam.learnJava.Rest</param-value>
+            <param-value>com.priyam.learnJava.resource</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
